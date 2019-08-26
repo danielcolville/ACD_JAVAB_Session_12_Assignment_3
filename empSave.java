@@ -69,7 +69,7 @@ public class empSave extends HttpServlet {
 		empSave.insertEmp(con,nm,em,ng,jd);
 		response.setContentType("text/html");
 		response.getWriter().append("Employee Saved Successfully ");
-		response.getWriter().append("<meta http-equiv='refresh' content='5; url=http://localhost:8080/HelloWorld/employee.jsp'>");
+		response.getWriter().append("<meta http-equiv='refresh' content='3; url=http://localhost:8080/HelloWorld/employee.jsp'>");
 		
 	}
 
