@@ -1,9 +1,13 @@
 package dbservlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Date;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import books.DBConnection;
+import books.DbUtility;
 
 /**
  * Servlet implementation class empSave
@@ -61,7 +66,7 @@ public class empSave extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		PrintWriter out=response.getWriter();
 		String nm=request.getParameter("name");
 		String em=request.getParameter("em");
 		String ng=request.getParameter("grade");
@@ -69,7 +74,10 @@ public class empSave extends HttpServlet {
 		empSave.insertEmp(con,nm,em,ng,jd);
 		response.setContentType("text/html");
 		response.getWriter().append("Employee Saved Successfully ");
-		response.getWriter().append("<meta http-equiv='refresh' content='3; url=http://localhost:8080/HelloWorld/employee.jsp'>");
+		response.getWriter().append("<meta http-equiv='refresh' content='3; url=EmployeeList'>");
+		
+		
+		
 		
 	}
 
