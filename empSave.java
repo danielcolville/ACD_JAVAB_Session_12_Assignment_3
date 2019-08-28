@@ -1,4 +1,4 @@
-package dbservlets;
+package dbproperties;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -66,6 +66,32 @@ public class empSave extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.getWriter().append(""+ 
+				"<!DOCTYPE html>\r\n" + 
+				"<html>\r\n" + 
+				"<head>\r\n" + 
+				"<meta charset=\"ISO-8859-1\">\r\n" + 
+				"<title>Employee info system</title>\r\n" + 
+				"</head>\r\n" + 
+				"<body>\r\n" + 
+				"<form action=\"empSave\" method=\"post\" >\r\n" + 
+				"Name: <input type=\"text\" name=\"name\">\r\n" + 
+				"Email:<input type=\"text\" name=\"em\">\r\n" + 
+				"Name Grade: <input type=\"text\" name=\"grade\">\r\n" + 
+				"Join Date: <input type=\"Date\" name=\"join\">\r\n" + 
+				"<input type=\"submit\" value=\"Save Employee info\"></form>\r\n" + 
+				"\r\n" + 
+				"</body>\r\n" + 
+				"</html>");
+		
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		PrintWriter out=response.getWriter();
 		String nm=request.getParameter("name");
 		String em=request.getParameter("em");
@@ -76,17 +102,7 @@ public class empSave extends HttpServlet {
 		response.getWriter().append("Employee Saved Successfully ");
 		response.getWriter().append("<meta http-equiv='refresh' content='3; url=EmployeeList'>");
 		
-		
-		
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 	}
 
 }
